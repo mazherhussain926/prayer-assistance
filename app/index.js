@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Pressable, Image,StyleSheet, ScrollView } from "react-native";
+import { View, Text, Pressable, Image,StyleSheet, } from "react-native";
 import { router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign } from "@expo/vector-icons";
@@ -32,7 +32,7 @@ const features = [
         style={styles.coverImage}
       />
 
-      <ScrollView style={styles.contentContainer}>
+      <View style={styles.contentContainer}>
         <Image
           source={require("../assets/images/welcome/mosque2.png")}
           style={styles.logo}
@@ -59,10 +59,10 @@ const features = [
           ))}
         </View>
 
-        <Pressable style={styles.button} onPress={() => router.replace("(tabs)")}>
+        <Pressable style={styles.button} onPress={()=> router.replace("(tabs)")}>
           <Text style={styles.buttonText}>Get Started</Text>
         </Pressable>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 }
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
   featureItem: {
     flexDirection: "row",
     justifyContent: "space-around",
-    paddingVertical: 15,
+    paddingVertical: 10,
   },
   icon: {
     width: 30,
